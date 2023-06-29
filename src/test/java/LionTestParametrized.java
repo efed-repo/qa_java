@@ -9,8 +9,8 @@ import static org.junit.Assert.assertEquals;
 public class LionTestParametrized {
 
     private final String sex;
-
     private final boolean expectedSex;
+
 
     public LionTestParametrized(String sex, boolean expectedSex) {
         this.sex = sex;
@@ -26,9 +26,13 @@ public class LionTestParametrized {
     }
 
     @Test
-    public void SuccessSexLionTest() throws Exception {
-        Lion lion = new Lion(sex);
+    public void doesLionHaveManeTest() throws Exception {
+        Lion lion = new Lion(sex, null);
         boolean expected = expectedSex;
-        assertEquals("Пол льва не соответсвует заданным параметрам", expected, lion.doesHaveMane());
+
+        boolean actual = lion.doesHaveMane();
+
+        assertEquals("Пол льва не соответсвует заданным параметрам",expected, actual);
+
     }
 }

@@ -28,8 +28,10 @@ public class FelineTestParametrized {
 
     @Test
     public void getFelineKittensWithParamsTest() {
-        int actualCount = feline.getKittens(actualKittensCount);
         int expectedCount = expectedKittensCount;
-        assertEquals("Количество котят должно быть " +expectedKittensCount, expectedCount, expectedCount);
+
+        int actualCount = feline.getKittens(actualKittensCount);
+
+        assertEquals("Количество котят должно быть " + expectedKittensCount, expectedCount, actualCount);
     }
 }

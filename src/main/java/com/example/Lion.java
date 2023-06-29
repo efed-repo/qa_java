@@ -5,17 +5,10 @@ import java.util.List;
 public class Lion {
 
     boolean hasMane;
+    private FelineInterface felineInterface;
 
-    // new
-    private Food food;
-
-    public Lion (Food food) {
-        this.food = food;
-    }
-    // end of new
-
-
-    public Lion(String sex) throws Exception {
+    public Lion(String sex, FelineInterface felineInterface) throws Exception {
+        this.felineInterface = felineInterface;
         if ("Самец".equals(sex)) {
             hasMane = true;
         } else if ("Самка".equals(sex)) {
@@ -25,24 +18,15 @@ public class Lion {
         }
     }
 
-    Feline feline = new Feline();
-
     public int getKittens() {
-        return feline.getKittens();
+        return felineInterface.getKittens();
     }
 
     public boolean doesHaveMane() {
         return hasMane;
     }
 
-    /* public List<String> getFood() throws Exception {
-        return feline.getFood("Хищник");
-    }*/
-
-    // new
-
-    public List<String> getFood () {
-        return food.getFood("Хищник");
+    public List<String> getFood() throws Exception {
+        return felineInterface.getFood("Хищник");
     }
-    // end of new
 }
