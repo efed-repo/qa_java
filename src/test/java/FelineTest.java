@@ -1,6 +1,6 @@
 import com.example.Feline;
 import org.junit.Test;
-
+import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 public class FelineTest {
@@ -22,7 +22,10 @@ public class FelineTest {
     }
 
     @Test
-    public void getFelineMeatTest() {
+    public void getFelineMeatTest() throws Exception {
+        List<String> actualFood = feline.eatMeat();
+        List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
+        assertEquals(expectedFood, actualFood);
 
     }
 }
