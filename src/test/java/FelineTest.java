@@ -20,11 +20,9 @@ public class FelineTest {
 
     @Test
     public void getFelineKittensWithoutParamsTest() {
-        int expected = 1;
-
         int actual = feline.getKittens();
 
-        assertEquals("Количество котят должно быть = 1", expected, actual);
+        assertEquals("Количество котят должно быть = 1", 1, actual);
     }
 
     @Test

@@ -16,11 +16,9 @@ public class LionTest {
     @Mock
     FelineInterface felineInterface;
 
-    //@Test
+    @Test (expected = Exception.class)
     public void unSuccessSexLionTest() throws Exception {
         Lion lion = new Lion("Львенок", felineInterface);
-        String expected = "Используйте допустимые значения пола животного - самец или самка";
-        assertEquals("Пол льва не соответсвует заданным параметрам", expected, lion.doesHaveMane());
 
     }
 
@@ -28,11 +26,10 @@ public class LionTest {
     public void getLionKittensTest() throws Exception {
         Mockito.when(felineInterface.getKittens()).thenReturn(1);
         Lion lion = new Lion("Самец", felineInterface);
-        int expectedKittens = 1;
 
         int actualKittens = lion.getKittens();
 
-        assertEquals("Количество котят должно быть равно 1", expectedKittens, actualKittens);
+        assertEquals("Количество котят должно быть равно 1", 1, actualKittens);
     }
 
     @Test

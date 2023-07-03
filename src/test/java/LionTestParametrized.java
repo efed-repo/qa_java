@@ -3,6 +3,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
+
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
@@ -28,11 +29,10 @@ public class LionTestParametrized {
     @Test
     public void doesLionHaveManeTest() throws Exception {
         Lion lion = new Lion(sex, null);
-        boolean expected = expectedSex;
 
         boolean actual = lion.doesHaveMane();
 
-        assertEquals("Пол льва не соответсвует заданным параметрам",expected, actual);
+        assertEquals("Пол льва не соответсвует заданным параметрам", expectedSex, actual);
 
     }
 }
